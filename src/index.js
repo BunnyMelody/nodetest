@@ -26,5 +26,7 @@ app.use(ctx => {
     you can see me ~~
     `
 })
-
-app.listen(PORT)
+    .listen(PORT)
+    .on('error', (err, ctx) => {
+        log.error('server error', err, ctx)
+    })
