@@ -17,13 +17,46 @@ app.use(async (ctx, next) => {
     ctx.set('X-Respence-Time', `${ms}ms`)
 })
 
+const paintSth = (n) => {
+    if (typeof n != 'number') return false;
+    const num = parseInt(n) % 2 === 0 ? n + 1 : n;
+    const middle = parseInt(num / 2);
+    let prevStone = middle;
+    let nextStone = middle;
+    let str = '\n';
+    for (let i = 0; i < num; i++) {
+        for(j = 0; j < num; j++) {
+            if (j < prevStone || j > nextStone) {
+                str += ' ';
+            } else {
+                str += '*'
+            }
+        }
+        str += '\n'
+        if (i < middle) {
+            prevStone--;
+            nextStone++; 
+        } else {
+            prevStone++;
+            nextStone--;
+        }
+    }
+    str += '\n'
+    return str;
+}
+
 app.use(ctx => {
     ctx.body = `
     /*****************************************/
     hello, 
     /*****************************************/
+
     welcome to melody's world
-    you can see me ~~
+    敬请期待我的华丽变身
+
+    ${paintSth(13)}
+    ${paintSth(17)}
+    ${paintSth(21)}
     `
 })
     .listen(PORT)
