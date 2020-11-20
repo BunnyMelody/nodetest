@@ -1,0 +1,28 @@
+{
+  "name": "nodetest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BunnyMelody/nodetest.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "melody",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/BunnyMelody/nodetest/issues"
+  },
+  "homepage": "https://github.com/BunnyMelody/nodetest#readme",
+  "dependencies": {
+    "cool-ascii-faces": "^1.3.4",
+    "koa": "^2.13.0",
+    "pg": "^8.5.1"
+  }
+}
